@@ -1,0 +1,110 @@
+[
+  {
+    "id": "9a1da9e8-57cd-4381-b51f-e9304a5b6caa",
+    "name": "Диагностика на дому",
+    "price_from": 5.0,
+    "price_to": 30.0,
+    "unit": "BYN",
+    "note": "Бесплатно при ремонте",
+    "order": 1
+  },
+  {
+    "id": "a273f18d-3822-48cd-85fa-81aa009ceb44",
+    "name": "Заправка фреоном",
+    "price_from": 80.0,
+    "price_to": 150.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 2
+  },
+  {
+    "id": "4b1e474d-ec19-40df-9c9e-ca4967221468",
+    "name": "Замена компрессора",
+    "price_from": 180.0,
+    "price_to": 350.0,
+    "unit": "BYN",
+    "note": "С запчастью",
+    "order": 3
+  },
+  {
+    "id": "163438f7-d54c-47af-a8f5-aaf8c3551f29",
+    "name": "Замена пускового реле",
+    "price_from": 50.0,
+    "price_to": 90.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 4
+  },
+  {
+    "id": "c1df63b2-8a4a-416f-8e19-7553e6da336c",
+    "name": "Замена термостата",
+    "price_from": 60.0,
+    "price_to": 110.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 5
+  },
+  {
+    "id": "7a92d6c4-697d-405f-abb1-44ad972939a2",
+    "name": "Ремонт системы No Frost",
+    "price_from": 90.0,
+    "price_to": 200.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 6
+  },
+  {
+    "id": "47d49f9c-1b71-487b-856f-a8da9ff661a3",
+    "name": "Замена уплотнительной резины",
+    "price_from": 70.0,
+    "price_to": 140.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 7
+  },
+  {
+    "id": "ed54315b-69f3-46b8-8c27-acfcca2aaf83",
+    "name": "Замена ТЭНа оттайки",
+    "price_from": 70.0,
+    "price_to": 130.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 8
+  },
+  {
+    "id": "8dce4bce-1524-492c-a785-b3d5b30ce635",
+    "name": "Устранение засора дренажа",
+    "price_from": 40.0,
+    "price_to": 80.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 9
+  },
+  {
+    "id": "42b4f6e2-ad09-4ec2-b514-b45e3e1cb5cf",
+    "name": "Замена вентилятора",
+    "price_from": 60.0,
+    "price_to": 130.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 10
+  },
+  {
+    "id": "8cfdaa53-e399-4e8a-8e6f-62b4d2e8b26b",
+    "name": "Замена платы управления",
+    "price_from": 150.0,
+    "price_to": 380.0,
+    "unit": "BYN",
+    "note": "Со стоимостью платы",
+    "order": 11
+  },
+  {
+    "id": "971d278c-c9dc-4f09-b1fa-4865c7dbcf4c",
+    "name": "Перевеска дверей",
+    "price_from": 30.0,
+    "price_to": 60.0,
+    "unit": "BYN",
+    "note": "",
+    "order": 12
+  }
+]

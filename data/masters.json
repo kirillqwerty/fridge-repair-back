@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c9cb1e4b-9bfd-4382-a213-c4895f19fbe4",
+    "name": "Сергей",
+    "role": "Старший мастер",
+    "experience": "19 лет опыта",
+    "specialization": "Все бренды, сложные случаи",
+    "image_url": "",
+    "order": 1
+  },
+  {
+    "id": "8c82ad13-f5cc-4981-8c1d-227f56c43931",
+    "name": "Андрей",
+    "role": "Мастер по холодильникам",
+    "experience": "12 лет опыта",
+    "specialization": "Atlant, Indesit, BEKO, Samsung",
+    "image_url": "",
+    "order": 2
+  },
+  {
+    "id": "f31cb75e-a32f-4703-bb9f-afc10c0b574d",
+    "name": "Алексей",
+    "role": "Мастер по холодильникам",
+    "experience": "10 лет опыта",
+    "specialization": "LG, Bosch, Liebherr, Electrolux",
+    "image_url": "",
+    "order": 3
+  },
+  {
+    "id": "f3be1427-13e5-4162-b742-a4fb6c25104b",
+    "name": "Виктор",
+    "role": "Мастер по холодильникам",
+    "experience": "15 лет опыта",
+    "specialization": "Ariston, SHARP, DAEWOO, AEG",
+    "image_url": "",
+    "order": 4
+  }
+]
