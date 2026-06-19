@@ -24,18 +24,18 @@ INITIAL_CONTACTS = {
 
 
 INITIAL_SERVICES = [
-    {"id": _id(), "name": "Диагностика на дому", "price_from": 0, "price_to": 30, "unit": "BYN", "note": "Бесплатно при ремонте", "order": 1},
-    {"id": _id(), "name": "Заправка фреоном", "price_from": 80, "price_to": 150, "unit": "BYN", "note": "", "order": 2},
-    {"id": _id(), "name": "Замена компрессора", "price_from": 180, "price_to": 350, "unit": "BYN", "note": "С запчастью", "order": 3},
-    {"id": _id(), "name": "Замена пускового реле", "price_from": 50, "price_to": 90, "unit": "BYN", "note": "", "order": 4},
-    {"id": _id(), "name": "Замена термостата", "price_from": 60, "price_to": 110, "unit": "BYN", "note": "", "order": 5},
-    {"id": _id(), "name": "Ремонт системы No Frost", "price_from": 90, "price_to": 200, "unit": "BYN", "note": "", "order": 6},
-    {"id": _id(), "name": "Замена уплотнительной резины", "price_from": 70, "price_to": 140, "unit": "BYN", "note": "", "order": 7},
-    {"id": _id(), "name": "Замена ТЭНа оттайки", "price_from": 70, "price_to": 130, "unit": "BYN", "note": "", "order": 8},
-    {"id": _id(), "name": "Устранение засора дренажа", "price_from": 40, "price_to": 80, "unit": "BYN", "note": "", "order": 9},
-    {"id": _id(), "name": "Замена вентилятора", "price_from": 60, "price_to": 130, "unit": "BYN", "note": "", "order": 10},
-    {"id": _id(), "name": "Замена платы управления", "price_from": 150, "price_to": 380, "unit": "BYN", "note": "Со стоимостью платы", "order": 11},
-    {"id": _id(), "name": "Перевеска дверей", "price_from": 30, "price_to": 60, "unit": "BYN", "note": "", "order": 12},
+    {"id": _id(), "name": "Диагностика на дому", "price_from": 0, "price_to": 0, "unit": "BYN", "warranty": "—", "order": 1},
+    {"id": _id(), "name": "Заправка фреоном", "price_from": 80, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 2},
+    {"id": _id(), "name": "Замена компрессора", "price_from": 180, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 3},
+    {"id": _id(), "name": "Замена пускового реле", "price_from": 50, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 4},
+    {"id": _id(), "name": "Замена термостата", "price_from": 60, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 5},
+    {"id": _id(), "name": "Ремонт системы No Frost", "price_from": 90, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 6},
+    {"id": _id(), "name": "Замена уплотнительной резины", "price_from": 70, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 7},
+    {"id": _id(), "name": "Замена ТЭНа оттайки", "price_from": 70, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 8},
+    {"id": _id(), "name": "Устранение засора дренажа", "price_from": 40, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 9},
+    {"id": _id(), "name": "Замена вентилятора", "price_from": 80, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 10},
+    {"id": _id(), "name": "Замена платы управления", "price_from": 120, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 11},
+    {"id": _id(), "name": "Перевеска дверей", "price_from": 60, "price_to": 0, "unit": "BYN", "warranty": "до 24 мес.", "order": 12},
 ]
 
 
@@ -177,12 +177,12 @@ INITIAL_MASTERS = [
 
 
 INITIAL_PORTFOLIO = [
-    {"id": _id(), "title": "Ремонт компрессора Atlant", "description": "Заменён компрессор, восстановлена работа за 2 часа.", "before_url": "", "after_url": "", "brand": "Atlant", "order": 1},
-    {"id": _id(), "title": "Замена уплотнителя Samsung", "description": "Заменена дверная резина, устранены потери холода.", "before_url": "", "after_url": "", "brand": "Samsung", "order": 2},
-    {"id": _id(), "title": "Восстановление No Frost LG", "description": "Прочистка дренажа и замена ТЭНа оттайки.", "before_url": "", "after_url": "", "brand": "LG", "order": 3},
-    {"id": _id(), "title": "Заправка фреоном Bosch", "description": "Найдена утечка, паяна трасса, заправлен фреон.", "before_url": "", "after_url": "", "brand": "Bosch", "order": 4},
-    {"id": _id(), "title": "Замена платы Liebherr", "description": "Установлена новая плата управления, прошита.", "before_url": "", "after_url": "", "brand": "Liebherr", "order": 5},
-    {"id": _id(), "title": "Ремонт термостата Indesit", "description": "Заменён термостат, отрегулирован холод.", "before_url": "", "after_url": "", "brand": "Indesit", "order": 6},
+    {"id": _id(), "title": "Замена вентилятора", "description": "Установлен новый вентилятор, проверена система обдува.", "before_url": "/assets/portfolio/zamena-ventilyatora-do.jpg", "after_url": "/assets/portfolio/zamena-ventilyatora-posle.jpg", "brand": "", "order": 1},
+    {"id": _id(), "title": "Замена компрессора", "description": "Заменён компрессор, восстановлена работа холодильника.", "before_url": "/assets/portfolio/zamena-kompressora-do.jpg", "after_url": "/assets/portfolio/zamena-kompressora-posle.jpg", "brand": "", "order": 2},
+    {"id": _id(), "title": "Замена термостата", "description": "Заменён термостат, отрегулирован холод.", "before_url": "/assets/portfolio/zamena-termostata-do.jpg", "after_url": "/assets/portfolio/zamena-termostata-posle.jpg", "brand": "", "order": 3},
+    {"id": _id(), "title": "Заправка фреоном", "description": "Найдена утечка, система заправлена фреоном.", "before_url": "/assets/portfolio/zapravka-freonom-do.jpg", "after_url": "/assets/portfolio/zapravka-freonom-posle.jpg", "brand": "", "order": 4},
+    {"id": _id(), "title": "Восстановление No Frost", "description": "Прочистка дренажа и восстановление системы оттайки.", "before_url": "/assets/portfolio/no-frost-do.jpg", "after_url": "/assets/portfolio/no-frost-posle.jpg", "brand": "", "order": 5},
+    {"id": _id(), "title": "Ремонт платы управления", "description": "Проведён ремонт платы управления и проверка работы.", "before_url": "/assets/portfolio/remont-platy-do.jpg", "after_url": "/assets/portfolio/remont-platy-posle.jpg", "brand": "", "order": 6},
 ]
 
 

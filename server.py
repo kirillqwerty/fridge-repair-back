@@ -90,9 +90,9 @@ class ServiceItem(BaseModel):
     id: Optional[str] = None
     name: str
     price_from: float
-    price_to: float
+    price_to: float = 0
     unit: str = "BYN"
-    note: str = ""
+    warranty: str = "до 24 мес."
     order: int = 0
 
 
@@ -266,6 +266,17 @@ def _round_price(value: float) -> int:
     return int(round(value / 5) * 5)
 
 
+def _service_warranty(item: dict) -> str:
+    warranty = str(item.get("warranty") or "").strip()
+    if warranty:
+        return warranty
+
+    name = str(item.get("name") or "").lower()
+    if "диагност" in name:
+        return "—"
+    return "до 24 мес."
+
+
 def _normalize_services(items: list[dict] | None) -> list[dict]:
     payload: list[dict] = []
     if not isinstance(items, list):
@@ -281,7 +292,7 @@ def _normalize_services(items: list[dict] | None) -> list[dict]:
                 "price_from": _safe_num(item.get("price_from"), 0),
                 "price_to": _safe_num(item.get("price_to"), 0),
                 "unit": str(item.get("unit") or "BYN").strip() or "BYN",
-                "note": str(item.get("note") or ""),
+                "warranty": _service_warranty(item),
                 "order": int(_safe_num(item.get("order"), idx + 1)),
             }
         )
@@ -298,14 +309,6 @@ def _default_brand_services(brand: dict, base_services: list[dict]) -> list[dict
     for idx, service in enumerate(base_services):
         price_from = _round_price(_safe_num(service.get("price_from"), 0) * factor)
         price_to = _round_price(_safe_num(service.get("price_to"), 0) * factor)
-        note = service.get("note", "")
-
-        if slug in {"samsung", "lg"} and "No Frost" in service.get("name", ""):
-            note = note or "Частая услуга для No Frost"
-        if slug in {"bosch", "liebherr", "aeg", "electrolux"} and "платы" in service.get("name", "").lower():
-            note = note or "Цена зависит от модели платы"
-        if slug == "atlant" and service.get("name") == "Замена компрессора":
-            note = note or "Популярные компрессоры обычно в наличии"
 
         result.append(
             {
@@ -313,7 +316,7 @@ def _default_brand_services(brand: dict, base_services: list[dict]) -> list[dict
                 "id": service.get("id") or _id(),
                 "price_from": price_from,
                 "price_to": price_to,
-                "note": note,
+                "warranty": _service_warranty(service),
                 "order": service.get("order", idx + 1),
             }
         )
@@ -453,13 +456,7 @@ async def list_services() -> list:
 
 @api.put("/services")
 async def replace_services(items: list[ServiceItem], _: dict = Depends(require_admin)) -> list:
-    payload = []
-    for it in items:
-        d = it.model_dump()
-        if not d.get("id"):
-            d["id"] = _id()
-        payload.append(d)
-    payload.sort(key=lambda x: x.get("order", 0))
+    payload = _normalize_services([it.model_dump() for it in items])
     await write_json("services", payload)
     return payload
 
@@ -471,8 +468,9 @@ async def create_service(item: ServiceItem, _: dict = Depends(require_admin)) ->
     d["id"] = _id()
     if not d.get("order"):
         d["order"] = (max([i.get("order", 0) for i in items]) + 1) if items else 1
+    d = _normalize_services([d])[0]
     items.append(d)
-    await write_json("services", items)
+    await write_json("services", _normalize_services(items))
     return d
 
 
@@ -484,8 +482,9 @@ async def update_service(item_id: str, item: ServiceItem, _: dict = Depends(requ
         raise HTTPException(status_code=404, detail="Услуга не найдена")
     new_data = item.model_dump()
     new_data["id"] = item_id
+    new_data = _normalize_services([new_data])[0]
     items[idx] = new_data
-    await write_json("services", items)
+    await write_json("services", _normalize_services(items))
     return new_data
 
 
